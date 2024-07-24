@@ -26,6 +26,16 @@ public class Movement : MonoBehaviour
 
         float moveRotation = (Input.GetAxis("Horizontal")*SpeedRotation)*Time.deltaTime;
         transform.Rotate(0,moveRotation,0);
+
+        //Run 
+
+        if( Input.GetKey(KeyCode.LeftShift) && moveVertical > 00.00){
+            Speed = 5f;
+        }
+        else{
+            Speed = 2.5f;
+        }
+       
          
     }
 }

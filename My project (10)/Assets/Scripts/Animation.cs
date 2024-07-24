@@ -14,6 +14,7 @@ public class Animation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //walk front
         if(Input.GetAxis("Vertical") > 00.00){
             anim.SetBool("walkfront", true);
         }
@@ -22,12 +23,21 @@ public class Animation : MonoBehaviour
             anim.SetBool("walkfront", false);
         }
 
+        //walk back
         if(Input.GetAxis("Vertical")< 00.00){
             anim.SetBool("walkback", true);
 
         }
         else{
             anim.SetBool("walkback", false);
+        }
+
+        //Run
+        if(Input.GetKey(KeyCode.LeftShift) && Input.GetAxis("Vertical") > 00.00){
+            anim.SetBool("run", true);
+        }
+        else{
+            anim.SetBool("run", false);
         }
     }
 }
